@@ -169,10 +169,6 @@ color: red;
     color: orange;
 }
 
-.blog-text .blog-titlr:hover{
-color: red;
-transition: all ease 0.3s;
-}
 
 .blog-text p{
     color: #9b9b9b;

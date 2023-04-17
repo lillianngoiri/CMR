@@ -17,7 +17,6 @@
 <body>
 
     <?php include "header.html"?><br>
-    <hr>
 
     <div>
         <div class="container">
