@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="style.css">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+</head>
+
+<body>
+
+    <?php include "header.html"?><br>
+
+    <section class="blog-heading">
+
+        <h3>My Blog</h3>
+    </section><br>
+
+    <div class="padded-boxes" id="posts">
+        <section>
+            <h3 class="heading">Heading 1</h3>
+            <div class="padded">
+                <!-- box 1 content -->
+            </div>
+        </section>
+        <section>
+            <h3 class="heading">Heading 2</h3>
+            <div class="padded">
+                <!-- box 2 content -->
+            </div>
+        </section>
+        <section>
+            <h3 class="heading">Heading 3</h3>
+            <div class="padded">
+                <!-- box 3 content -->
+            </div>
+        </section>
+    </div>
+
+    <!--<div id="">
+        <section class="padded-boxes">
+            <section id="9">
+                <h3 id="heading" class="heading"></h3>
+                <div class="padded"></div>
+                <section class="blog-container" id="blogs">
+                    <p></p>
+                </section>
+            </section>
+            <section id="13">
+                <h3 id="heading" class="heading"></h3>
+                <div class="padded crm-pic"></div>
+                <section class="blog-container" id="crm-content blogs">
+                    <p></p>
+                </section>
+            </section>
+            <section id="16">
+                <h3 id="heading" class="heading"></h3>
+                <div class="padded"></div>
+                <section class="blog-container" id="blogs">
+                    <p></p>
+                </section>
+            </section>
+        </section>
+    </div>-->
+
+
+
+    <script>
+$(document).ready(function(){
+    $("#blogs-img").hide();
+
+    $("#blogs-img").click(function () {
+        $("#blogs").show();
+    });
+
+});
+
+
+
+    fetch("information.json").then((data) => {
+        return data.json();
+    }).then((objectData) => {
+        console.log(objectData.posts);
+        let blogData = "";
+        objectData.posts.map((value) => {
+            blogData += ' <div>' +
+                '<h3>' + value.title + '</h3>' +
+                '<section id="blogs-img"><img src="' + value.featured_image + '" /></section>' +
+                '<p id="blogs">' + value.content + '</p>'
+            '</div>';
+        });
+        document.getElementById("posts").innerHTML = blogData;
+    }).catch((err) => {
+        console.log(err);
+    })
+    
+    /*  $(document).ready(function() {
+           $.getJSON("information.json", function(data) {
+               var info = '';
+
+               $.each(data.posts, function(key, value) {
+
+                   info += '<div>';
+                   info += '<div>' + value.title + '<div>';
+                   $("div").append("<img src=" + value.featured_image + "/><br>");
+                   info += ('<div>' + value.content + value.id + '<div>');
+               });
+
+               $('#blogs').append(info);
+
+
+           });
+
+           $(".crm-pic").click(function() {
+               $("#crm-content ").toggle();
+           });
+
+       });*/
+    </script>
+
+
+</body>
+
+</html>

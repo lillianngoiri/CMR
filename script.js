@@ -1,26 +1,66 @@
-
 fetch("information.json").then((data) => {
     return data.json();
 }).then((objectData) => {
-    console.log(objectData[0].title);
-    let blogData = "";
-    objectData.map((values) => {
-        blogData +=  ' <div>
-            '<h3>${values.title}</h3>' +
-            '<section><img src="${values.image}" /></section>' +
-            '<p>${values.content}</p>'
-            '</div>'
+    console.log(objectData.posts); let blogData = "";
+    objectData.posts.map((value) => {
+        blogData += ' <div class="culumn" id="blog">' +
+            '<a href="content.html"><h3 class ="heading" id ="heading">' + value.title + '</h3></a>' +
+            '<section id ="blogs-img '+value.id+'" class="blog-img"><a href="content.html"><img src="' + value.featured_image + '" /></a></section>' +
+            /*'<div class="blog-container" id="blogs'+value.id+'" >' + value.content + '</div><br><br>'*/
+        '</div>';
     });
-    document.getElementById("").innerHTML = blogData;
+    document.getElementById("posts").innerHTML = blogData;
 }).catch((err) => {
     console.log(err);
-})
+
+});
+
+
+/*$(document).ready(function(){
+    $("#blogs").hide();
+
+   if( $("#blogs-img").click(function () {
+        $("$blogs").show();
+    }));
+
+});
 
 
 
+const blogImage = document.querySelector(".blogs-img");
+const blogContent = document.querySelector(".blog-container");
+
+blogImage.addEventListener("click", () =>{
+    blogContent.style.visibility = "visible";
+})*/
+
+
+    
+
+/*$(document).ready(function () {
+    $(".padded").click(function() {
+        $("blogs-img").toggle();
+        $("#blogs ").toggle();
+    })
+});*/
 
 
 
+/*function show() {
+ 
+  /* Access image by id and change
+  the display property to block
+  document.getElementById('blogs')
+          .style.display = "blog-container";
+
+  document.getElementById('blogs-img')
+          .style.display = "blogs-img";
+          var x = document.getElementById("padded");
+if (x.style.display === "none") {
+  x.style.display = "block";
+} else {
+  x.style.display = "none";
+}*/
 
 
 

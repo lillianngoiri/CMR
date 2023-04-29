@@ -1,45 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-</head>
-<body>
-    
-<section class="blog-heading">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
 
-    <h3>My Blog</h3>
-</section><br>
+        <section class="blog-heading">
 
-<div class="padded-boxes">
-    <section id ="9">
-        <h3 id="heading" class="heading"></h3>
-        <div class="padded"></div>
-        <section class="blog-container" id="blogs">
-            <p></p>
-        </section>
-    </section>
-    <section id ="13">
-        <h3 id="heading" class="heading"></h3>
-        <div class="padded crm-pic"></div>
-        <section class="blog-container" id="crm-content blogs">
-            <p></p>
-        </section>
-    </section>
-    <section id ="16">
-        <h3 id="heading" class="heading"></h3>
-        <div class="padded"></div>
-        <section class="blog-container" id="blogs">
-            <p></p>
-        </section>
-    </section>
-</div>
+            <nav class="container">
+                <input type="checkbox" id="check">
+                <label for="check" class="checkbtn">
+                    <i class =" fas fa-bars"></i>
+                </label>
+                <label class ="logo"> CMR APP</label>
+                <ul >
+                    <li ><a class = "active" href="site.php">MATERIAL PRICE </a></li>
+                    <li ><a href="#">ESTIMATION GUIDE</a></li>
+                    <li ><a href="index.html">REGULATIONS</a></li>
+                </ul>
+            </nav>
+        </section><br>
 
 
+        <div class="padded-boxes row" id="posts">
 
-<script src="script.js"></script>
-</body>
+            <div class="column">
+                <h3 id="heading" class="heading"></h3>
+                <div class="padded" id ="padded">
+                    <div class="blog-img"  id="blogs-img"></div>
+                    <section class="blog-container " id="blogs"></section>
+                </div>
+            </div><br>
+
+           
+            
+        </div>
+
+
+
+        <script src="script.js"></script>
+    </body>
 </html>
